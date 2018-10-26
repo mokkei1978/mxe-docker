@@ -3,6 +3,8 @@
 
 set -e
 
-docker build --build-arg http_proxy=${HTTP_PROXY} -t mxe:4.5.06 .
+read tag < tag.txt
+
+docker build --build-arg http_proxy=${HTTP_PROXY} -t mxe:${tag} .
 
 exit 0

@@ -3,7 +3,7 @@
 
 set -e
 
-tag=4.5.06
+read tag < tag.txt
 
 docker save mxe:${tag} -o mxe-docker-${tag}.tar
 
