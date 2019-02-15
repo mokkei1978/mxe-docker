@@ -1,8 +1,8 @@
-FROM debian:latest
+FROM debian:9.7
 
 MAINTAINER Kei Sakamoto <ksakamot@mri-jma.go.jp>
 
-RUN echo "deb http://ftp.jp.debian.org/debian/ stretch main contrib non-free" > /etc/apt/sources.list
+RUN echo "deb http://ftp.jp.debian.org/debian/ stretch main contrib non-free" >> /etc/apt/sources.list
 RUN apt-get update && apt-get install -y gfortran make git
 
 WORKDIR /root
