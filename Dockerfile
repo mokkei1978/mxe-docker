@@ -1,13 +1,18 @@
-FROM debian:9.7
+FROM mricom-base:4.5.16
 
-MAINTAINER Kei Sakamoto <ksakamot@mri-jma.go.jp>
+LABEL maintainer="Kei Sakamoto <ksakamot@mri-jma.go.jp>"
+LABEL title="MXE"
 
-RUN echo "deb http://ftp.jp.debian.org/debian/ stretch main contrib non-free" >> /etc/apt/sources.list
-RUN apt-get update && apt-get install -y gfortran make git
+### MRI.COM-rect パッケージの追加
+
+ADD mxe.tar /root/
+
+#- 事前に ./ に mxe.tar を作成しておく
 
 WORKDIR /root
 COPY config/.* ./
-RUN git clone http://synthesis.jamstec.go.jp/git/MXE.git && cp MXE/setting/machine/gfortran-6_2/macros.make MXE/setting/
-RUN mkdir -p MXE/linkdir/mxe-data && mkdir -p MXE/linkdir/mxe.git
+RUN mkdir -p mxe/linkdir/mxe-data mxe.git
+WORKDIR /root/MXE/setting
+RUN cp machine/gfortran-6_2/macros.make ./
 
 CMD ["/bin/bash"]
