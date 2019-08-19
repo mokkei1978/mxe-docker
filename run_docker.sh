@@ -3,7 +3,14 @@
 
 set -e
 
-read tag < tag.txt
+tag="latest"
+while getopts t option ; do
+    case ${option} in
+	t) read tag < tag.txt ;;
+	\?) exit 1 ;;
+    esac
+done
+shift `expr ${OPTIND} - 1`
 
 dir_git_repos="${HOME}/repos/mxe.git"
 dir_data="/worka/ocpublic/mxe-data"

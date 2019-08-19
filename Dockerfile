@@ -3,6 +3,8 @@ FROM mricom-base:4.5.16
 LABEL maintainer="Kei Sakamoto <ksakamot@mri-jma.go.jp>"
 LABEL title="MXE"
 
+RUN apt-get install -y liblapack-dev libfftw3-3 libfftw3-dev libfftw3-doc
+
 ### MRI.COM-rect パッケージの追加
 
 ADD mxe.tar /root/
@@ -11,8 +13,7 @@ ADD mxe.tar /root/
 
 WORKDIR /root
 COPY config/.* ./
-RUN mkdir -p mxe/linkdir/mxe-data mxe.git
-WORKDIR /root/MXE/setting
-RUN cp machine/gfortran-6_2/macros.make ./
+COPY config/macros.make MXE/setting/
+WORKDIR /root/MXE
 
 CMD ["/bin/bash"]
