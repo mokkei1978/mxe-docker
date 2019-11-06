@@ -3,7 +3,8 @@
 
 set -e
 
-read tag < tag.txt
+#read tag < tag.txt
+tag=latest
 
 docker save mxe:${tag} -o mxe-docker-${tag}.tar
 

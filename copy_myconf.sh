@@ -6,5 +6,6 @@ set -e
 name="mxe"
 
 docker cp ${HOME}/.gitconfig ${name}:/root/
+docker cp myconf/test.sh ${name}:/root/MXE/
 
 exit 0
