@@ -1,4 +1,4 @@
-FROM mxe-base:4.7.00.1
+FROM mxe-base:4.7.00
 
 LABEL maintainer="Kei Sakamoto <ksakamot@mri-jma.go.jp>"
 LABEL title="MXE"
@@ -11,7 +11,7 @@ ADD mxe.tar /root/
 
 WORKDIR /root
 COPY config/.* ./
-COPY config/macros.make MXE/setting/
 WORKDIR /root/MXE
+RUN cp setting/machine/docker-debug/macros.make setting/
 
 CMD ["/bin/bash"]
