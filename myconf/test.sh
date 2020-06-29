@@ -19,6 +19,13 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
+cd ../anlpy
+sh test/test.sh
+if [ $? -ne 0 ]; then
+    (cd ../setting; ./print.sh "Unit test fail.")
+    exit 1
+fi
+
 (cd ../setting; ./print.sh "Unit test succeed.")
 
 exit 0

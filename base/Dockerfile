@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y gfortran make git bc time openmpi-bin l
 RUN apt-get install -y liblapack-dev libfftw3-3 libfftw3-dev libfftw3-doc
 
 # Python main libraries
-RUN pip install numpy pandas matplotlib scipy
+RUN pip install numpy pandas matplotlib scipy f90nml numba
 
 # for cartopy
 RUN apt-get install -y  libproj-dev proj-data proj-bin libgeos-dev g++
