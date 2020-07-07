@@ -12,5 +12,5 @@ MXE を Docker で利用するためのツール。
                          MXEで使うライブラリを追加した mxe-base イメージを作る
   * build_image.sh       mxe-base に MXE パッケージを追加したイメージを作る
   * run_docker.sh        MXE Dockerイメージからコンテナを起動する
-  * copy_myconf.sh       自分の設定ファイルをコンテナ内にコピーする
+  * login_mxe.sh         稼働中のMXEコンテナにログインする
   * save_image.sh        作成したイメージをファイルに保存する
