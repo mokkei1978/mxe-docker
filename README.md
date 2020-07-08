@@ -8,9 +8,10 @@ MXE を Docker で利用するためのツール。
 ツール
 --------
 
-  * base/build_image.sh  mricom-base イメージに
-                         MXEで使うライブラリを追加した mxe-base イメージを作る
-  * build_image.sh       mxe-base に MXE パッケージを追加したイメージを作る
+  * base/build_image.sh  mxe-base イメージを作る
+                         (Debian + Python + ミドルソフトウェア + ライブラリ)
+  * build_image.sh       mxe イメージを作る
+                         (mxe-base + MXE パッケージ)
   * run_docker.sh        MXE Dockerイメージからコンテナを起動する
   * login_mxe.sh         稼働中のMXEコンテナにログインする
   * save_image.sh        作成したイメージをファイルに保存する
