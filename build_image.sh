@@ -4,13 +4,13 @@
 set -e
 
 tag="latest"
-while getopts t option ; do
-    case ${option} in
-	t) read tag < tag.txt ;;
-	\?) exit 1 ;;
-    esac
-done
-shift `expr ${OPTIND} - 1`
+#while getopts t option ; do
+#    case ${option} in
+#	t) read tag < tag.txt ;;
+#	\?) exit 1 ;;
+#    esac
+#done
+#shift `expr ${OPTIND} - 1`
 
 if [ ! -d ~/MXE ]; then
     echo "ERROR: ~/MXE is not found."

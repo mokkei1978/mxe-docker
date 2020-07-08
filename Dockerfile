@@ -1,4 +1,4 @@
-FROM mxe-base:4.7.05
+FROM mxe-base:latest
 
 LABEL maintainer="Kei Sakamoto <ksakamot@mri-jma.go.jp>"
 LABEL title="MXE"

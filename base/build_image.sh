@@ -3,8 +3,8 @@
 
 set -e
 
-read tag < ../tag.txt
-#tag="latest"
+#read tag < ../tag.txt
+tag="latest"
 
 docker build --build-arg http_proxy=${HTTP_PROXY} --build-arg HTTPS_PROXY=${HTTP_PROXY} \
        -t mxe-base:${tag} --no-cache=true .
