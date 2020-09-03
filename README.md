@@ -9,6 +9,7 @@ MXE を Docker で利用するためのツール。
               Debian + Python3 + gfortran + ミドルソフトウェア + ライブラリ
 	      (コンテナ内のユーザーはrootのみ)
   * mxe       mxe-base + MXE パッケージ + ユーザー設定
+              (MXE の単体テストに利用)
 
 
 使い方

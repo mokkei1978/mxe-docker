@@ -1,4 +1,4 @@
-FROM python:3.8.3-slim-buster
+FROM python:3.8.5-slim-buster
 
 LABEL maintainer="Kei Sakamoto <ksakamot@mri-jma.go.jp>"
 LABEL title="MXE-base"
@@ -18,5 +18,8 @@ RUN apt-get install -y  libproj-dev proj-data proj-bin libgeos-dev g++
 RUN pip install pykdtree cython cartopy
 RUN pip uninstall -y shapely
 RUN pip install shapely --no-binary shapely
+
+ENV OMPI_MCA_btl_vader_single_copy_mechanism none
+#- OpenMPI v3 のエラーメッセージを止めるのに必要らしい
 
 CMD ["/bin/bash"]
