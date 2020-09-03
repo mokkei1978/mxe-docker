@@ -2,7 +2,6 @@ MXE-Docker
 ========
 
 MXE を Docker で利用するためのツール。
-気象研での利用を想定し、 HTTP_PROXY を使ってネット上のリソースにアクセスする。
 2つのイメージを作り、利用する。
 
   * mxe-base  MRI.COM, MXE を実行するためのベースイメージ
@@ -14,6 +13,9 @@ MXE を Docker で利用するためのツール。
 
 使い方
 --------
+
+各イメージの使い方。
+
 
 ### mxe-base
 
@@ -28,10 +30,9 @@ Linuxのみ対応。
 
 1. 自分のユーザー設定を行ったイメージを作成する。
 
-> cd ~/
-> git clone [MXE gitリポジトリ]
+> git clone [MXE gitリポジトリ] ~/mxe/
 > sh build_image.sh
-> docker images  ! mxe:[自分のユーザー名]のイメージがあれば成功
+> docker images  ! "mxe:[自分のユーザー名]" のイメージがあれば成功
 
 2. コンテナを起動する
 

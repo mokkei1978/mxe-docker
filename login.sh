@@ -1,6 +1,7 @@
 #!/bin/bash
 #- 稼働中のMXEコンテナにログインする
 
-docker exec -it mxe /bin/bash
+user=`id -nu`
+docker exec -it mxe-${user} /bin/bash
 
 exit 0

@@ -1,5 +1,5 @@
 #!/bin/bash
-#- Dockerfile を使ってイメージを構築する (通信なし)
+#- 自分のユーザー設定を行った mxe イメージを作る (通信なし)
 #- 事前に ~/mxe/ にMXEをgit cloneしておく
 
 set -e
@@ -9,9 +9,8 @@ if [ ! -d ~/mxe ]; then
     exit 1
 fi
 
-if [ ! "docker image ls -q mxe-base" ]; then
+if [ ! "docker image ls -q mokkei1978/mxe-base" ]; then
     docker pull mokkei1978/mxe-base:latest
-    docker tag mokkei1978/mxe-base:latest mxe-base:latest
 fi
 
 dir=`pwd`
