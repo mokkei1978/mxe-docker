@@ -1,11 +1,17 @@
 #!/bin/bash
 #- Dockerfile を使ってイメージを構築する (通信なし)
+#- 事前に ~/mxe/ にMXEをgit cloneしておく
 
 set -e
 
-if [ ! -d ~/MXE ]; then
-    echo "ERROR: ~/MXE is not found."
+if [ ! -d ~/mxe ]; then
+    echo "ERROR: ~/mxe is not found."
     exit 1
+fi
+
+if [ ! "docker image ls -q mxe-base" ]; then
+    docker pull mokkei1978/mxe-base:latest
+    docker tag mokkei1978/mxe-base:latest mxe-base:latest
 fi
 
 dir=`pwd`
@@ -16,15 +22,16 @@ group=`id -ng`
 
 rm -f mxe.tar
 
-mkdir -p ~/temp
-cd ~/temp/
-rm -fr MXE
+mkdir -p temp
+cd temp/
+rm -fr mxe
 rm -f mxe.tar
-git clone -b master ~/MXE/
-(cd MXE/setting/; ln -s sh/print.sh . ; ln -s machine/docker-debug/macros.make .)
-(cd MXE/; ln -s setting/sh/test.sh . )
-echo "/home/${user}/stream.txt" > MXE/setting/stream.conf
-tar -cf mxe.tar MXE/
+git clone -b master ~/mxe/
+(cd mxe/setting/; ln -s sh/print.sh . ; ln -s machine/docker-debug/macros.make .)
+(cd mxe/; ln -s setting/sh/test.sh . )
+echo "/home/${user}/stream.txt" > mxe/setting/stream.conf
+tar -cf mxe.tar mxe/
+rm -fr mxe
 mv mxe.tar ${dir}/
 cd ${dir}/
 

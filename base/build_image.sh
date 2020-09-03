@@ -1,7 +1,9 @@
 #!/bin/bash
-#- Dockerfile を使ってイメージを構築する
+#-mxe-base イメージを作る
 
 set -e
+
+cd `dirname $0`
 
 #read tag < ../tag.txt
 tag="latest"

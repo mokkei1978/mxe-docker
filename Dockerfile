@@ -19,5 +19,5 @@ RUN useradd -m -u $uid -g $group $user
 USER $user
 ADD mxe.tar /home/${user}/
 
-WORKDIR /home/${user}/MXE
+WORKDIR /home/${user}/mxe
 CMD ["/bin/bash"]

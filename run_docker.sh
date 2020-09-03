@@ -1,15 +1,15 @@
 #!/bin/bash
-#- MXE Dockerイメージからコンテナを起動する (自分用)
+#- 自分のユーザー設定を行った mxe イメージを作る
 
 set -e
-
-name="mxe"
 
 uid=`id -u`
 gid=`id -g`
 user=`id -nu`
 group=`id -ng`
 home="/home/${user}"
+
+name="mxe-${user}"
 
 dir_git_repos="${HOME}/repos/mxe.git"
 dir_data="/worka/ocpublic/mxe-data"
@@ -21,7 +21,7 @@ docker run -e http_proxy=${HTTP_PROXY} -e HTTPS_PROXY=${HTTP_PROXY} \
 # HTTPS_PROXY is used by pip
 
 docker cp myconf/.bashrc ${name}:${home}/
-docker cp myconf/pre-commit ${name}:${home}/MXE/.git/hooks/
+docker cp myconf/pre-commit ${name}:${home}/mxe/.git/hooks/
 docker cp ${HOME}/.gitconfig ${name}:${home}/
 
 docker exec -u ${user} ${name} git remote add bare ~/mxe.git/
