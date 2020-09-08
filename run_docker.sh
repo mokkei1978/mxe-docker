@@ -15,7 +15,7 @@ dir_data="/worka/ocpublic/mxe-data"
 
 docker run -e http_proxy=${HTTP_PROXY} -e HTTPS_PROXY=${HTTP_PROXY} \
        -v ${dir_git_repos}:${home}/mxe.git \
-       -v ${dir_data}:${home}/MXE/linkdir/mxe-data \
+       -v ${dir_data}:${home}/mxe/linkdir/mxe-data \
        --rm -itd --name ${name} mxe:${user}
 # HTTPS_PROXY is used by pip
 

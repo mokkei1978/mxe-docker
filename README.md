@@ -21,8 +21,9 @@ MXE を Docker で利用するためのツール。
 
 ターミナル(またはWindows PowerShell)でpullして使う。
 
+```
 > docker pull mokkei1978/mxe-base:latest
-
+```
 
 ### mxe
 
@@ -30,19 +31,24 @@ Linuxのみ対応。
 
 1. 自分のユーザー設定を行ったイメージを作成する。
 
+```
 > git clone [MXE gitリポジトリ] ~/mxe/
 > sh build_image.sh
 > docker images  ! "mxe:[自分のユーザー名]" のイメージがあれば成功
+```
 
 2. コンテナを起動する
 
+```
 > sh run_docker.sh  ! 設定ファイルや共有ディレクトリの設定は適当に変更してください
+```
 
 3. コンテナを終了する
 
+```
 (コンテナ内)> exit
 (外)> docker stop mxe-[ユーザー名]
-
+```
 
 ツール
 --------
