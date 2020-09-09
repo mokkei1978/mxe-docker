@@ -6,6 +6,7 @@ MXE を Docker で利用するためのツール。
 
   * mxe-base  MRI.COM, MXE を実行するためのベースイメージ
               Debian + Python3 + gfortran + ミドルソフトウェア + ライブラリ
+	      (Cartopy地理データ)
 	      (コンテナ内のユーザーはrootのみ)
   * mxe       mxe-base + MXE パッケージ + ユーザー設定
               (MXE の単体テストに利用)

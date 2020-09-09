@@ -19,5 +19,7 @@ RUN useradd -m -u $uid -g $group $user
 USER $user
 ADD mxe.tar /home/${user}/
 
+RUN mkdir -p /home/${user}/.local/share/cartopy/shapefiles/natural_earth/physical && ln -s /usr/local/share/cartopy/shapefiles/natural_earth/physical/* /home/${user}/.local/share/cartopy/shapefiles/natural_earth/physical/
+
 WORKDIR /home/${user}/mxe
 CMD ["/bin/bash"]
