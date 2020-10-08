@@ -1,4 +1,4 @@
-FROM python:3.8.5-slim-buster
+FROM python:3.9.4-slim-buster
 
 LABEL maintainer="Kei Sakamoto <ksakamot@mri-jma.go.jp>"
 LABEL title="MXE-base"
