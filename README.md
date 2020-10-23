@@ -2,59 +2,76 @@ MXE-Docker
 ========
 
 MXE を Docker で利用するためのツール。
-2つのイメージを作り、利用する。
 
-  * mxe-base  MRI.COM, MXE を実行するためのベースイメージ
-              Debian + Python3 + gfortran + ミドルソフトウェア + ライブラリ
-	      (Cartopy地理データ)
-	      (コンテナ内のユーザーはrootのみ)
-  * mxe       mxe-base + MXE パッケージ + ユーザー設定
-              (MXE の単体テストに利用)
+
+必要要件
+--------
+
+  * Linux
+  * Docker (which dockerで確認) (+基本的な使い方の習熟)
+  * インターネット通信
+  * MXE git リポジトリのURL
 
 
 使い方
 --------
 
-各イメージの使い方。
+MXEを載せたDockerイメージを作成し、コンテナを起動、終了するまでの使い方。
+全てここのディレクトリで作業する。
 
 
-### mxe-base
+### 1. イメージの作成
 
-ターミナル(またはWindows PowerShell)でpullして使う。
-
-```
-> docker pull mokkei1978/mxe-base:latest
-```
-
-### mxe
-
-Linuxのみ対応。
-
-1. 自分のユーザー設定を行ったイメージを作成する。
+まず、以下のコマンドで、自分のユーザー設定を行ったイメージを作成する。
 
 ```
-> git clone [MXE gitリポジトリ] ~/mxe/
+> git clone [MXE gitリポジトリURL] ~/mxe/  !- 本パッケージとは別にMXEを~/mxe/に取得しておく
 > sh build_image.sh
-> docker images  ! "mxe:[自分のユーザー名]" のイメージがあれば成功
+> docker images         !- "mxe:[自分のユーザー名]" のイメージがあれば成功
 ```
 
-2. コンテナを起動する
+イメージの作成は1度だけで良い。MXEのバージョンを更新する場合には作り直す。
+
+
+### 2. コンテナの起動
+
+以下のコマンドで、1で作成したイメージからコンテナ(仮想マシン)を起動する。
 
 ```
-> sh run_docker.sh  ! 設定ファイルや共有ディレクトリの設定は適当に変更してください
+> edit run_docker.sh  ! 設定ファイルや共有ディレクトリを設定
+> sh run_docker.sh
 ```
+成功すれば、ターミナルがコンテナ内に移動する。
 
-3. コンテナを終了する
+
+### 3. コンテナ内の作業
+
+コンテナには以下が設定されている。
+エディターは用意していないので、自分でインストールするなりする。
+
+  * Debian linux
+  * Python3, Pythonの各種ライブラリ, Cartopy地理データ
+  * gfortran, MPI, fortranライブラリ
+  * git, make
+  * MXE パッケージ
+  * ユーザー設定 (uid, gidなど)
+
+
+### 4. コンテナの終了
+
+作業が終われば以下のコマンドでコンテナを終了する。
+作業したファイルは、共有ディレクトリ以外は全て消えることに注意。
 
 ```
 (コンテナ内)> exit
 (外)> docker stop mxe-[ユーザー名]
 ```
 
+
 ツール
 --------
 
-  * base/build_image.sh  mxe-base イメージを作る
+  * base/build_image.sh  [mxe-base](base/README.md) イメージを作る 
   * build_image.sh       自分のユーザー設定を行った mxe イメージを作る
   * run_docker.sh        MXE Dockerイメージからコンテナを起動する
   * login.sh             稼働中のMXEコンテナにログインする
