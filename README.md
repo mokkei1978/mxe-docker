@@ -16,7 +16,7 @@ MXE を Docker で利用するためのツール。
 使い方
 --------
 
-MXEを載せたDockerイメージを作成し、コンテナを起動、終了するまでの使い方。
+MXEを載せたDockerイメージを作成し、コンテナ(仮想マシン)を起動、終了するまでの使い方。
 全てここのディレクトリで作業する。
 
 
@@ -35,7 +35,7 @@ MXEを載せたDockerイメージを作成し、コンテナを起動、終了�
 
 ### 2. コンテナの起動
 
-以下のコマンドで、1で作成したイメージからコンテナ(仮想マシン)を起動する。
+以下のコマンドで、1で作成したイメージからコンテナを起動する。
 
 ```
 > edit run_docker.sh  ! 設定ファイルや共有ディレクトリを設定
@@ -71,8 +71,11 @@ MXEを載せたDockerイメージを作成し、コンテナを起動、終了�
 ツール
 --------
 
-  * base/build_image.sh  [mxe-base](base/README.md) イメージを作る 
   * build_image.sh       自分のユーザー設定を行った mxe イメージを作る
   * run_docker.sh        MXE Dockerイメージからコンテナを起動する
   * login.sh             稼働中のMXEコンテナにログインする
   * save_image.sh        作成したイメージをファイルに保存する
+
+  * base/build_image.sh  - [mxe-base](base/README.md) イメージを作る
+
+  * sandbox/             - mxe-base + ユーザー設定 のテスト作業用(MXEなし)
