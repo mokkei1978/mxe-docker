@@ -10,7 +10,8 @@ ARG user=dev
 ARG uid=1
 ARG group=M201
 ARG gid=6020
-RUN groupadd -g $gid $group
+RUN groupadd -f $group
+RUN groupmod -g $gid $group
 RUN useradd -m -u $uid -g $group $user
 
 
