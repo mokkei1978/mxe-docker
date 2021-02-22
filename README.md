@@ -71,11 +71,12 @@ MXEを載せたDockerイメージを作成し、コンテナ(仮想マシン)を
 ツール
 --------
 
-  * build_image.sh       自分のユーザー設定を行った mxe イメージを作る
-  * run_docker.sh        MXE Dockerイメージからコンテナを起動する
-  * login.sh             稼働中のMXEコンテナにログインする
-  * save_image.sh        作成したイメージをファイルに保存する
+  * build_image.sh        - 自分のユーザー設定を行った mxe イメージを作る
+  * run_docker.sh         - MXE Dockerイメージからコンテナを起動する
+  * login.sh              - 稼働中のMXEコンテナにログインする
+  * save_image.sh         - 作成したイメージをファイルに保存する
 
-  * base/build_image.sh  - [mxe-base](base/README.md) イメージを作る
+  * base/build_image.sh   - [mxe-base](base/README.md) イメージを作る
+  * nusdas/build_image.sh - [NuSDaS](nusdas/README.md) をインストール
 
-  * sandbox/             - mxe-base + ユーザー設定 のテスト作業用(MXEなし)
+  * sandbox/              - mxe-base + ユーザー設定 のテスト作業用(MXEなし)

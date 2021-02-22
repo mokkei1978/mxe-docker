@@ -9,8 +9,9 @@ if [ ! -d ~/mxe ]; then
     exit 1
 fi
 
-if [ ! "docker image ls -q mokkei1978/mxe-base" ]; then
+if [ ! "docker image ls -q mxe-nusdas-base" ]; then
     docker pull mokkei1978/mxe-base:latest
+    (cd nusdas/ ; sh download_nusdas.sh ; sh build_image.sh )
 fi
 
 dir=`pwd`

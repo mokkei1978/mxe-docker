@@ -1,4 +1,4 @@
-FROM mokkei1978/mxe-base:latest
+FROM mxe-nusdas-base:latest
 
 LABEL maintainer="Kei Sakamoto <ksakamot@mri-jma.go.jp>"
 LABEL title="MXE"
@@ -19,8 +19,8 @@ RUN useradd -m -u $uid -g $group $user
 
 USER $user
 ADD mxe.tar /home/${user}/
+WORKDIR /home/${user}/mxe
 
 RUN mkdir -p /home/${user}/.local/share/cartopy/shapefiles/natural_earth/physical && ln -s /usr/local/share/cartopy/shapefiles/natural_earth/physical/* /home/${user}/.local/share/cartopy/shapefiles/natural_earth/physical/
 
-WORKDIR /home/${user}/mxe
 CMD ["/bin/bash"]
