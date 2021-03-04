@@ -10,7 +10,8 @@ RUN mkdir /root/temp
 WORKDIR /root/jasper
 RUN cmake -G "Unix Makefiles" -H/root/jasper/ -B/root/temp -DCMAKE_INSTALL_PREFIX=/usr/local
 WORKDIR /root/temp
-RUN make clean all && make install && export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+RUN make clean all && make install
+ENV LD_LIBRARY_PATH $LD_LIBRARY_PATH:/usr/local/lib
 
 ADD nusdas1.4/ /root/nusdas1.4/
 
