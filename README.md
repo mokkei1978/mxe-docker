@@ -78,5 +78,6 @@ MXEを載せたDockerイメージを作成し、コンテナ(仮想マシン)を
 
   * base/build_image.sh   - [mxe-base](base/README.md) イメージを作る
   * nusdas/build_image.sh - [NuSDaS](nusdas/README.md) をインストール
+  * emacs/build_image.sh  - mxe-nusdas-base に emacs を追加
 
   * sandbox/              - mxe-base + ユーザー設定 のテスト作業用(MXEなし)
