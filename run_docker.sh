@@ -11,7 +11,7 @@ home="/home/${user}"
 name="mxe-${user}"
 
 dir_git_repos="${HOME}/repos/mxe.git"
-dir_data="/worka/${user}/mxe-data"
+dir_data="/NasA2020_1/M201/${user}/mxe-data"
 
 docker run -e http_proxy=${HTTP_PROXY} -e HTTPS_PROXY=${HTTP_PROXY} \
        -v ${dir_git_repos}:${home}/mxe.git \

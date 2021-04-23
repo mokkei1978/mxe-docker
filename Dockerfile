@@ -1,4 +1,4 @@
-FROM mxe-nusdas-base:latest
+FROM mxe-nusdas-base:emacs
 
 LABEL maintainer="Kei Sakamoto <ksakamot@mri-jma.go.jp>"
 LABEL title="MXE"
