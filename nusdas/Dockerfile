@@ -3,7 +3,6 @@ FROM mokkei1978/mxe-base:latest
 LABEL maintainer="Kei Sakamoto <ksakamot@mri-jma.go.jp>"
 LABEL title="MXE+NuSDaS-base"
 
-RUN apt-get install -y cmake
 WORKDIR /root/
 RUN git clone https://github.com/jasper-software/jasper.git
 RUN mkdir /root/temp
