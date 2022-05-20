@@ -4,7 +4,7 @@ LABEL maintainer="Kei Sakamoto <ksakamot@mri-jma.go.jp>"
 LABEL title="MXE+NuSDaS-base"
 
 WORKDIR /root/
-RUN git clone https://github.com/jasper-software/jasper.git
+RUN git clone https://github.com/jasper-software/jasper.git -b version-2.0.33
 RUN mkdir /root/temp
 WORKDIR /root/jasper
 RUN cmake -G "Unix Makefiles" -H/root/jasper/ -B/root/temp -DCMAKE_INSTALL_PREFIX=/usr/local
