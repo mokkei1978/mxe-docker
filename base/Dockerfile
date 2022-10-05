@@ -1,4 +1,4 @@
-FROM python:3.10.4-slim-bullseye
+FROM python:3.10.7-slim-bullseye
 
 LABEL maintainer="Kei Sakamoto <ksakamot@mri-jma.go.jp>"
 LABEL title="MXE-base"
