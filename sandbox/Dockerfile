@@ -1,6 +1,6 @@
-FROM mokkei1978/mxe-base:latest
+FROM mxe-base:emacs
 
-LABEL maintainer="Kei Sakamoto <ksakamot@mri-jma.go.jp>"
+LABEL maintainer="Kei Sakamoto <sakamoto.kei.6f@kyoto-u.ac.jp>"
 LABEL title="sandbox"
 
 ARG user=dev

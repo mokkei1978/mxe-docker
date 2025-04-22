@@ -7,10 +7,12 @@ user=`id -nu`
 home="/home/${user}"
 name="${user}"
 
-docker run -e http_proxy=${HTTP_PROXY} -e HTTPS_PROXY=${HTTP_PROXY} \
-       -v ${home}/temp:${home}/temp \
-       --rm -itd --name ${name} sandbox:${user}
+#args="-e http_proxy=${HTTP_PROXY} -e HTTPS_PROXY=${HTTP_PROXY}"
 # HTTPS_PROXY is used by pip
+args=""
+
+docker run ${args} -v ${home}/temp:${home}/temp \
+       --rm -itd --name ${name} sandbox:${user}
 
 docker cp myconf/.bashrc ${name}:${home}/
 docker cp ${HOME}/.gitconfig ${name}:${home}/

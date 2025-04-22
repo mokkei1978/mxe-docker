@@ -3,8 +3,9 @@
 
 set -e
 
-if [ ! "docker image ls -q mokkei1978/mxe-base" ]; then
-    docker pull mokkei1978/mxe-base:latest
+if [ ! "docker image ls -q mxe-base" ]; then
+    echo "ERROR: base image is not found: See README.md"
+    exit 1
 fi
 
 uid=`id -u`
