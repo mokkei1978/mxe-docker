@@ -1,11 +1,11 @@
 #!/bin/bash
-#- mxe-nusdas-base w/ emacs イメージを作る
+#- mxe-base w/ emacs イメージを作る
 
 set -e
 
 cd `dirname $0`
 
-docker build --build-arg http_proxy=${HTTP_PROXY} --build-arg HTTPS_PROXY=${HTTP_PROXY} \
-       -t mxe-nusdas-base:emacs .
+docker build -t mxe-base:emacs .
+# --build-arg http_proxy=${HTTP_PROXY} --build-arg HTTPS_PROXY=${HTTP_PROXY} #- If proxy is needed
 
 exit 0
