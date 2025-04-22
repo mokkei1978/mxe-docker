@@ -1,6 +1,6 @@
 FROM python:3.10.7-slim-bullseye
 
-LABEL maintainer="Kei Sakamoto <ksakamot@mri-jma.go.jp>"
+LABEL maintainer="Kei Sakamoto <sakamoto.kei.6f@kyoto-u.ac.jp>"
 LABEL title="MXE-base"
 
 # same with mricom-docker
