@@ -18,4 +18,5 @@ alias l='ls $LS_OPTIONS -lA'
 # alias mv='mv -i'
 
 export LESSCHARSET=utf-8
-export PS1="\[\e[1;31m\]\w>\[\e[00m\] " \
+export PS1="\[\e[1;31m\]\w>\[\e[00m\] "
+export LANG=en_US.utf8

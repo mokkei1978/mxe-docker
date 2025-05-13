@@ -18,7 +18,7 @@ docker run ${args} -v ${dir_shared}:${dir_shared} \
        --rm -itd --name ${name} sandbox:${user}
 
 docker cp myconf/.bashrc ${name}:${home}/
-[ -f ${HOME}/.gitconfig ] && docker cp ${HOME}/.gitconfig ${name}:${home}/
+[ -f ${HOME}/.gitconfig ] && docker cp -L ${HOME}/.gitconfig ${name}:${home}/
 
 docker exec -it ${name} /bin/bash
 
