@@ -27,7 +27,9 @@ docker run ${args} \
 docker cp myconf/.bashrc ${name}:${home}/
 docker cp myconf/.emacs ${name}:${home}/
 docker cp myconf/pre-commit ${name}:${home}/mxe/.git/hooks/
-docker cp ${HOME}/.gitconfig ${name}:${home}/
+if [ -f ${HOME}/.gitconfig ] ; then
+    docker cp -L ${HOME}/.gitconfig ${name}:${home}/
+fi
 
 if [ "${user}" = "ksakamot" ] ; then
     docker exec -u ${user} ${name} git remote add bare ~/mxe.git/

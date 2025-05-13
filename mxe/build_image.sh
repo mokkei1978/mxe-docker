@@ -27,7 +27,7 @@ cd temp/
 rm -fr mxe
 rm -f mxe.tar
 git clone -b master ~/mxe/
-(cd mxe/setting/; ln -s sh/print.sh . ; ln -s machine/docker-debug/macros.make .)
+(cd mxe/setting/; ln -s sh/print.sh . ; ln -s machine/docker-main/macros.make .)
 (cd mxe/; ln -s setting/sh/test.sh . )
 echo "/home/${user}/stream.txt" > mxe/setting/stream.conf
 tar -cf mxe.tar mxe/
