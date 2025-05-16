@@ -22,6 +22,7 @@ mxe-base (必要なミドルウェアをインストールしたベースイメ�
 
   * base/build_image.sh   - [mxe-base](base/README.md) イメージを作る
   * nusdas/build_image.sh - [NuSDaS](nusdas/README.md) をインストール
+  * wgrib2/build_image.sh - [wgrib2](wgrib2/README.md) をインストール
   * emacs/build_image.sh  - mxe-base に emacs を追加
 
 MXE を載せたイメージの作成と実行
