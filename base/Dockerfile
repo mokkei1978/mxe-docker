@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y gfortran make git bc time openmpi-bin l
 RUN apt-get install -y liblapack-dev libfftw3-double3 libfftw3-dev libfftw3-doc
 
 # Python main libraries
-RUN apt-get install -y expat libudunits2-dev
+RUN apt-get install -y expat libudunits2-dev python3-tk
 RUN python -m pip install --upgrade pip
 RUN pip install numpy pandas matplotlib scipy f90nml numba cmocean ipython xarray cf-python "dask[complete]" docopt
 

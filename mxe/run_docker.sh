@@ -18,6 +18,12 @@ dir_data="${HOME}/mxe-data"  #- for unit test. なくても良い
 #dir_data="/NasA2020_1/M201/${user}/mxe-data"
 #args="-e http_proxy=${HTTP_PROXY} -e HTTPS_PROXY=${HTTP_PROXY}"
 
+#- for X-Window w/ wsl2
+args="${args} -v /mnt/wslg:/mnt/wslg -v /tmp/.X11-unix:/tmp/.X11-unix"
+args="${args} -e DISPLAY=${DISPLAY} -e WAYLAND_DISPLAY=${WAYLAND_DISPLAY} -e XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR} -e PULSE_SERVER=${PULSE_SERVER}"
+
+#args="${args} -v /mnt/h:/mnt/h"
+
 docker run ${args} \
        -v ${dir_git_repos}:${home}/mxe.git \
        -v ${dir_data}:${home}/mxe/linkdir/mxe-data \
