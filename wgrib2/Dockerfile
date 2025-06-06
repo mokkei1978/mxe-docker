@@ -7,8 +7,7 @@ WORKDIR /root/
 RUN git clone https://github.com/NOAA-EMC/wgrib2.git -b v3.7.0
 RUN mkdir /root/wgrib2/build
 WORKDIR /root/wgrib2/build
-RUN sed -i -e "/USE_NETCDF/s@off@on@g" ../CMakeLists.txt
-RUN cmake .. -DCMAKE_INSTALL_PREFIX=/usr/local && make && make install
+RUN cmake .. -DCMAKE_INSTALL_PREFIX=/usr/local -DUSE_NETCDF=ON -DMAKE_FTN_API=ON && make && make install
 
 WORKDIR /root/
 CMD ["/bin/bash"]
